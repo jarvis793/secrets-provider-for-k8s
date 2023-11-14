@@ -5,12 +5,10 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"secrets-provider-for-k8s/conjur-authn-k8s-client/pkg/log"
+	"secrets-provider-for-k8s2/pkg/log/messages"
 	"strconv"
 	"strings"
-
-	"github.com/cyberark/conjur-authn-k8s-client/pkg/log"
-
-	"github.com/cyberark/secrets-provider-for-k8s/pkg/log/messages"
 )
 
 // fileOpener is a function type that captures dependency injection for
@@ -58,12 +56,15 @@ func newAnnotationsFromFile(fo fileOpener, path string) (map[string]string, erro
 // List and multi-line annotations are formatted as a single string in the
 // annotations file, and this format persists into the map returned by this
 // function. For example, the following annotation:
-//   conjur.org/conjur-secrets.cache: |
-//     - url
-//     - admin-password: password
-//     - admin-username: username
+//
+//	conjur.org/conjur-secrets.cache: |
+//	  - url
+//	  - admin-password: password
+//	  - admin-username: username
+//
 // Is stored in the annotations file as:
-//   conjur.org/conjur-secrets.cache="- url\n- admin-password: password\n- admin-username: username\n"
+//
+//	conjur.org/conjur-secrets.cache="- url\n- admin-password: password\n- admin-username: username\n"
 func newAnnotationsFromReader(annotationsFile io.Reader) (map[string]string, error) {
 	var lines []string
 	scanner := bufio.NewScanner(annotationsFile)
