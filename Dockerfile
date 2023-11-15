@@ -41,7 +41,7 @@ ARG TAG
 RUN go build \
     -a \
     -installsuffix cgo \
-    -ldflags="-X github.com/cyberark/secrets-provider-for-k8s/pkg/secrets.Tag=$TAG" \
+    -ldflags="-X /opt/secrets-provider-for-k8s/pkg/secrets.Tag=$TAG" \
     -o secrets-provider \
     ./cmd/secrets-provider
 

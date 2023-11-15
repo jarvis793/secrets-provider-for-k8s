@@ -1,4 +1,4 @@
-module github.com/cyberark/secrets-provider-for-k8s
+module secrets-provider-for-k8s
 
 go 1.19
 
