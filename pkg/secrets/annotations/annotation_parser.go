@@ -6,7 +6,7 @@ import (
 	"io"
 	"os"
 	"secrets-provider-for-k8s/conjur-authn-k8s-client/pkg/log"
-	"secrets-provider-for-k8s2/pkg/log/messages"
+	"secrets-provider-for-k8s/pkg/log/messages"
 	"strconv"
 	"strings"
 )
