@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/cyberark/conjur-authn-k8s-client/pkg/log"
+	"secrets-provider-for-k8s/conjur-authn-k8s-client/pkg/log"
 )
 
 type AccessToken struct {

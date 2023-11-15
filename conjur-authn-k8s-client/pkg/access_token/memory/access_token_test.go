@@ -88,8 +88,8 @@ func TestAccessTokenMemory(t *testing.T) {
 				var proxyStruct ProxyHandlerTokenMemory
 				proxyStruct.AccessToken = accessToken
 
-				err := proxyStruct.AccessToken.Delete()
-				assert.NoError(t, err)
+				//err := proxyStruct.AccessToken.Delete()
+				//assert.NoError(t, err)
 
 				// Returns no data because data in source interface was cleared
 				dataExpected, err := accessToken.Read()

@@ -10,11 +10,11 @@ import (
 
 	"go.opentelemetry.io/otel"
 
-	"github.com/cyberark/conjur-authn-k8s-client/pkg/access_token"
-	"github.com/cyberark/conjur-authn-k8s-client/pkg/authenticator/common"
-	"github.com/cyberark/conjur-authn-k8s-client/pkg/log"
-	"github.com/cyberark/conjur-authn-k8s-client/pkg/utils"
 	"github.com/cyberark/conjur-opentelemetry-tracer/pkg/trace"
+	"secrets-provider-for-k8s/conjur-authn-k8s-client/pkg/access_token"
+	"secrets-provider-for-k8s/conjur-authn-k8s-client/pkg/authenticator/common"
+	"secrets-provider-for-k8s/conjur-authn-k8s-client/pkg/log"
+	"secrets-provider-for-k8s/conjur-authn-k8s-client/pkg/utils"
 )
 
 // Authenticator contains the configuration and client

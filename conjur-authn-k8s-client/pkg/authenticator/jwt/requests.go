@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/cyberark/conjur-authn-k8s-client/pkg/log"
+	"secrets-provider-for-k8s/conjur-authn-k8s-client/pkg/log"
 )
 
 // AuthenticateRequest sends an authenticate request
@@ -29,6 +29,9 @@ func AuthenticateRequest(authnURL string, account string, username string, jwtTo
 	req.Header.Set("Content-Type", "text/plain")
 	req.Header.Set("Content-Length", strconv.Itoa(len(formattedJwt)))
 	req.Header.Set("User-Agent", "k8s")
+
+	log.Debug(log.CAKC046, req.Body)
+	log.Debug(log.CAKC046, formattedJwt)
 
 	return req, nil
 }
